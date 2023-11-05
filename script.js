@@ -116,3 +116,32 @@ function addTask() {
 
     taskInput.value = "";
 }
+
+const button = document.querySelector('#my-button');
+
+button.addEventListener('mouseover', function() {
+    this.style.backgroundColor = 'red';
+});
+
+button.addEventListener('mouseout', function() {
+    this.style.backgroundColor = '';
+});
+
+
+const element = document.querySelector('.element');
+
+const tooltip = document.createElement('div');
+tooltip.className = 'tooltip';
+tooltip.innerHTML = 'This is a tooltip!';
+
+document.body.appendChild(tooltip);
+
+element.addEventListener('mouseover', function() {
+    tooltip.style.display = 'block';
+    tooltip.style.left = this.offsetLeft + 'px';
+    tooltip.style.top = this.offsetTop + 'px';
+});
+
+element.addEventListener('mouseout', function() {
+    tooltip.style.display = 'none';
+});

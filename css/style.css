@@ -2,6 +2,8 @@ body{
     background-color: aliceblue;
     font-size: larger;
     font-style: italic;
+    max-width: 100%;
+    margin: 0;
 }
 
 body > h1{
@@ -91,3 +93,11 @@ body {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.square {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}

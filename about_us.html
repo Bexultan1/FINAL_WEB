@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <script src="script.js"></script>
 
     <meta charset="UTF-8">
     <title>Tapki</title>
@@ -16,6 +17,24 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="main.html">Tapki</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <script>
+            button.addEventListener('mouseover', function() {
+                // Change the button style
+                this.style.backgroundColor = 'red';
+                this.style.cursor = 'pointer';
+            });
+
+            button.addEventListener('mouseout', function() {
+                // Restore the button style
+                this.style.backgroundColor = '';
+                this.style.cursor = '';
+            });
+
+            button.addEventListener('click', function() {
+                // Perform the button action
+                // ...
+            });
+        </script>
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -32,7 +51,7 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
+                    Others
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="workers.html ">Our employees</a>
@@ -47,21 +66,44 @@
     </div>
 </nav>
     <br><br>
+<div class="square"></div>
     <section class="border">
         <h2 >About us</h2>
-        <p>Tapki is an online home footwear store that offers a wide selection of slippers for men, women and children.<br>We strive to provide our customers with the best quality and most comfortable shoes at affordable prices.
+        <p id="textExample" rows="5" cols="60">Tapki is an online home footwear store that offers a wide selection of slippers for men, women and children.<br>We strive to provide our customers with the best quality and most comfortable shoes at affordable prices.
             We are confident that you will be able to find the slippers that are perfect for you in our store.<br><b>Thanks for choosing us!</b></p>
+        <audio id="myAudio" src="sound/IPhone%20Notification%20Sound%20(%20Default%20Notification%20Sound%20)__%20Ios%2014%20Notification%20Sound.mp4"></audio>
+        <button id="playButton">Play Sound</button>
             <br><br>
             <form>
                 <div class="form-group">
                   <label for="exampleInputEmail1">How did you find out about our website?</label>
                   <input type="text" class="form-control" id="text" aria-describedby="emailHelp" placeholder="">
                   <br><br>
-                  <button type="submit" class="btn btn-secondary">Send</button>
+                  <button type="submit" id = "my-button" class="btn btn-secondary">Send</button>
                 </div>
             </form>
     </section>
     <hr>
+<script>
+    const element = document.querySelector('.element');
+
+    const tooltip = document.createElement('div');
+    tooltip.className = 'tooltip';
+    tooltip.innerHTML = 'This is a tooltip!';
+
+    document.body.appendChild(tooltip);
+
+    element.addEventListener('mouseover', function() {
+        tooltip.style.display = 'block';
+        tooltip.style.left = this.offsetLeft + 'px';
+        tooltip.style.top = this.offsetTop + 'px';
+    });
+
+    element.addEventListener('mouseout', function() {
+        tooltip.style.display = 'none';
+    });
+
+</script>
         <div id="container" class="border">
             <div class="container-fluid">
                 <div class="row">
@@ -70,24 +112,59 @@
                     </div>
                     <div class="col-6">
                         <p><p> In the creation of our shoes we use only high quality and comfortable materials, as we value the trust of our customers. In our factory, we use only the best materials like :
-                        <ol>
-                            <li>Leather: it is strong, durable and has a good appearance. Various types of leather can be used, including genuine leather, suede and exotic leather (e.g. crocodile or snakeskin).</li>
-                            <li>Textile: Textile materials such as cotton, linen, nylon and polyester are used to create various types of shoes including sneakers, sneakers and cloth shoes. Textiles provide good ventilation and are lightweight.</li>
-                            <li>Rubber: Rubber soles are standard on most shoes as they provide good traction and cushioning. </li>
-                            <li>Plastic: Plastic materials can be used to create various parts of the shoe, including plastic inserts, buckles, and decoration details.</li>
-                        </ol>
+                        <ul class="list-group">
+                            <li class="list-group-item">Leather: it is strong, durable and has a good appearance. Various types of leather can be used, including genuine leather, suede and exotic leather (e.g. crocodile or snakeskin).</li>
+                            <li class="list-group-item">Textile: Textile materials such as cotton, linen, nylon and polyester are used to create various types of shoes including sneakers, sneakers and cloth shoes. Textiles provide good ventilation and are lightweight.</li>
+                            <li class="list-group-item">Rubber: Rubber soles are standard on most shoes as they provide good traction and cushioning. </li>
+                            <li class="list-group-item">Plastic: Plastic materials can be used to create various parts of the shoe, including plastic inserts, buckles, and decoration details.</li>
+                        </ul>
                         </p></p>
                     </div>
 
             </div>
         </div>
         </div>
-    <hr>
-    <p id = "demo"></p>
-
 
 <script>
-    document.getElementById("demo").innerHTML = "My First JavaScript";
+    const square = document.querySelector(".square");
+    const maxWidth = window.innerWidth - square.clientWidth;
+
+    let positionX = 0;
+    let direction = 1;
+
+    function moveSquare() {
+
+        positionX += 5 * direction; //
+        square.style.left = positionX + "px";
+
+
+        if (positionX >= maxWidth || positionX <= 0) {
+            direction *= -1;
+        }
+
+        requestAnimationFrame(moveSquare);
+    }
+
+    moveSquare();
+
+
+    const audio = document.getElementById("myAudio");
+    const playButton = document.getElementById("playButton");
+
+    playButton.addEventListener("click", function() {
+        if (audio.paused) {
+            audio.play();
+            playButton.textContent = "Pause Sound";
+        } else {
+            audio.pause();
+            playButton.textContent = "Play Sound";
+        }
+    });
+
+
 </script>
+
+    <hr>
 </div>
+
 </body>

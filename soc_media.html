@@ -72,28 +72,19 @@
                 <input id="review"name="review" type="text">
                 <div class="error"></div>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit" id = "my-button">Submit</button>
+            <script>
+                const button = document.querySelector('#my-button');
+
+                button.addEventListener('mouseover', function() {
+                    this.style.backgroundColor = 'red';
+                });
+
+                button.addEventListener('mouseout', function() {
+                    this.style.backgroundColor = '';
+                });
+            </script>
         </form>
-
-        <br>
-        <br>
-        <div class="border">
-            <div id="timer" >00:00</div>
-            <div id="controls">
-                <label for="duration">Set Timer (seconds):</label>
-                <input type="number" id="duration" min="1" value="60">
-                <button id="start">Start</button>
-                <button id="stop">Stop</button>
-            </div>
-        </div>
-
-        <div class="border" >
-            <input type="text" id="taskInput" placeholder="Add a new task">
-            <button onclick="addTask()">Add Task</button>
-
-            <ul id="taskList">
-            </ul>
-        </div>
     </div>
 
 
