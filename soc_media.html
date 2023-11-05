@@ -86,7 +86,77 @@
             </script>
         </form>
     </div>
+<div class="border">
+    <style>
+        .list-group-item {
+            height: 100px;
+        }
 
+        .sneakers-name {
+            font-family: 'Cursive', cursive;
+        }
+    </style>
+    <h1 style="font-family: 'Cursive', cursive;">SHop Quiz</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <h2 style="font-family: 'Cursive', cursive;">Shop Descriptions</h2>
+            <ul id="sortable1" class="list-group">
+                <li class="list-group-item" style="font-family: 'Cursive', cursive;"> is a German athletic apparel and footwear corporation headquartered in Herzogenaurach, Bavaria, Germany. It is the largest sportswear manufacturer in Europe, and the second largest in the world, after Nike.</li>
+                <li class="list-group-item" style="font-family: 'Cursive', cursive;"> is an American athletic footwear and apparel corporation headquartered near Beaverton, Oregon, United States.</li>
+                <li class="list-group-item" style="font-family: 'Cursive', cursive;">is an Italian luxury fashion house based in Florence, Italy.</li>
+                <li class="list-group-item" style="font-family: 'Cursive', cursive;">A is a German multinational corporation that designs and manufactures athletic and casual footwear, apparel and accessories, headquartered in Herzogenaurach, Bavaria, Germany. Puma is the third largest sportswear manufacturer in the world.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h2 style="font-family: 'Cursive', cursive;">Movies</h2>
+            <ul id="sortable2" class="list-group">
+                <li class="list-group-item"><span class="movie-name">Puma</span></li>
+                <li class="list-group-item"><span class="movie-name">Adidas</span></li>
+                <li class="list-group-item"><span class="movie-name">Nike</span></li>
+                <li class="list-group-item"><span class="movie-name">Gucci</span></li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <button id="checkButton" class="btn btn-primary" style="font-family: 'Cursive', cursive;">Done</button>
+    <div id="message" class="alert" style="display: none;"></div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+    <script>
+        $(function() {
+            $(".movie-name").css("pointer-events", "none");
+
+            $("#sortable2").sortable({
+                connectWith: ".list-group",
+                placeholder: "ui-state-highlight",
+            });
+
+            $("#checkButton").click(function() {
+                var movieOrder = ["Adidas", "Nike", "Puma", "Gucci"];
+                var currentOrder = $("#sortable2 .movie-name").map(function() {
+                    return $(this).text();
+                }).get();
+
+                var isCorrect = true;
+                for (var i = 0; i < movieOrder.length; i++) {
+                    if (movieOrder[i] !== currentOrder[i]) {
+                        isCorrect = false;
+                        break;
+                    }
+                }
+
+                var message = $("#message");
+                if (isCorrect) {
+                    message.removeClass("alert-danger").addClass("alert-success").text("Great!");
+                } else {
+                    message.removeClass("alert-success").addClass("alert-danger").text("Try again!");
+                }
+
+                message.show();
+            });
+        });
+    </script>
+</div>
 
 </body>
