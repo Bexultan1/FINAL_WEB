@@ -2,169 +2,83 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <title>Tapki</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js"></script>
+
+    <link rel="stylesheet" href="https://libs.cdnjs.net/font-awesome/6.4.2/css/all.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <script src="script.js"></script>
 
-    <meta charset="UTF-8">
-    <title>Tapki</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="main.html">Tapki</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <script>
-            button.addEventListener('mouseover', function() {
-                // Change the button style
-                this.style.backgroundColor = 'red';
-                this.style.cursor = 'pointer';
-            });
 
-            button.addEventListener('mouseout', function() {
-                // Restore the button style
-                this.style.backgroundColor = '';
-                this.style.cursor = '';
-            });
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="main.html">Tapki</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            button.addEventListener('click', function() {
-                // Perform the button action
-                // ...
-            });
-        </script>
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="main.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="about_us.html">About Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="soc_media.html">Our Social Medias</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Others
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="workers.html ">Our employees</a>
-                    <a class="dropdown-item" href="size_of_shoes.html">How do I choose my size correctly?</a>
-                </div>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
-    <br><br>
-<div class="square"></div>
-    <section class="border">
-        <h2 >About us</h2>
-        <p id="textExample" rows="5" cols="60">Tapki is an online home footwear store that offers a wide selection of slippers for men, women and children.<br>We strive to provide our customers with the best quality and most comfortable shoes at affordable prices.
-            We are confident that you will be able to find the slippers that are perfect for you in our store.<br><b>Thanks for choosing us!</b></p>
-        <audio id="myAudio" src="sound/IPhone%20Notification%20Sound%20(%20Default%20Notification%20Sound%20)__%20Ios%2014%20Notification%20Sound.mp4"></audio>
-        <button id="playButton">Play Sound</button>
-            <br><br>
-            <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">How did you find out about our website?</label>
-                  <input type="text" class="form-control" id="text" aria-describedby="emailHelp" placeholder="">
-                  <br><br>
-                  <button type="submit" id = "my-button" class="btn btn-secondary">Send</button>
-                </div>
-            </form>
-    </section>
-    <hr>
-<script>
-    const element = document.querySelector('.element');
-
-    const tooltip = document.createElement('div');
-    tooltip.className = 'tooltip';
-    tooltip.innerHTML = 'This is a tooltip!';
-
-    document.body.appendChild(tooltip);
-
-    element.addEventListener('mouseover', function() {
-        tooltip.style.display = 'block';
-        tooltip.style.left = this.offsetLeft + 'px';
-        tooltip.style.top = this.offsetTop + 'px';
-    });
-
-    element.addEventListener('mouseout', function() {
-        tooltip.style.display = 'none';
-    });
-
-</script>
-        <div id="container" class="border">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-6">
-                    <img src="https://i.pinimg.com/736x/42/fc/46/42fc467129ffa13150563d2d799f84e4--wall-design-visual-merchandising.jpg">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="main.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about_us.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="soc_media.html">Our Social Medias</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="workers.html ">Our employees</a>
+                        <a class="dropdown-item" href="size_of_shoes.html">How do I choose my size correctly?</a>
                     </div>
-                    <div class="col-6">
-                        <p><p> In the creation of our shoes we use only high quality and comfortable materials, as we value the trust of our customers. In our factory, we use only the best materials like :
-                        <ul class="list-group">
-                            <li class="list-group-item">Leather: it is strong, durable and has a good appearance. Various types of leather can be used, including genuine leather, suede and exotic leather (e.g. crocodile or snakeskin).</li>
-                            <li class="list-group-item">Textile: Textile materials such as cotton, linen, nylon and polyester are used to create various types of shoes including sneakers, sneakers and cloth shoes. Textiles provide good ventilation and are lightweight.</li>
-                            <li class="list-group-item">Rubber: Rubber soles are standard on most shoes as they provide good traction and cushioning. </li>
-                            <li class="list-group-item">Plastic: Plastic materials can be used to create various parts of the shoe, including plastic inserts, buckles, and decoration details.</li>
-                        </ul>
-                        </p></p>
-                    </div>
-
-            </div>
+                </li>
+            </ul>
         </div>
-        </div>
+    </nav>
+        <br><br>
+        <section class="border">
+            <h2 >About us</h2>
+            <section class="about_us">
+                <div class="container-fluid"></div>
+            </section>
+        </section>
+        <hr>
+    <script>
+        const element = document.querySelector('.element');
 
-<script>
-    const square = document.querySelector(".square");
-    const maxWidth = window.innerWidth - square.clientWidth;
+        const tooltip = document.createElement('div');
+        tooltip.className = 'tooltip';
+        tooltip.innerHTML = 'This is a tooltip!';
 
-    let positionX = 0;
-    let direction = 1;
+        document.body.appendChild(tooltip);
 
-    function moveSquare() {
+        element.addEventListener('mouseover', function() {
+            tooltip.style.display = 'block';
+            tooltip.style.left = this.offsetLeft + 'px';
+            tooltip.style.top = this.offsetTop + 'px';
+        });
 
-        positionX += 5 * direction; //
-        square.style.left = positionX + "px";
+        element.addEventListener('mouseout', function() {
+            tooltip.style.display = 'none';
+        });
 
-
-        if (positionX >= maxWidth || positionX <= 0) {
-            direction *= -1;
-        }
-
-        requestAnimationFrame(moveSquare);
-    }
-
-    moveSquare();
-
-
-    const audio = document.getElementById("myAudio");
-    const playButton = document.getElementById("playButton");
-
-    playButton.addEventListener("click", function() {
-        if (audio.paused) {
-            audio.play();
-            playButton.textContent = "Pause Sound";
-        } else {
-            audio.pause();
-            playButton.textContent = "Play Sound";
-        }
-    });
-
-
-</script>
-
+    </script>
     <hr>
-</div>
-
 </body>
